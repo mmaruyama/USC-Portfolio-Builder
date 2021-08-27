@@ -1,0 +1,19 @@
+******************************
+Joe tax form 2022
+******************************
+
+Joe'sIRA:
+	Cash : 100000.0
+	MSFT : 1
+	AAPL : 1
+	KO : 2
+
+Joe's401k:
+	Cash : 100000.0
+	MSFT : 1
+	TSLA : 2
+
+
+Net Worth: 202194.54
+Tax Rate: 0.35
+OWED TAXES ARE: 70768.09

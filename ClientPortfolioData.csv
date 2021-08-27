@@ -1,0 +1,17 @@
+
+true,true,Bob's IRA,100000.0,Bob,45,true,MSFT,true,20
+true,true,Bob's IRA,100000.0,Bob,45,true,JPM,true,20
+true,true,Bob's IRA,100000.0,Bob,45,true,MRNA,true,20
+true,true,Bob's IRA,100000.0,Bob,45,true,MRNA,true,20
+false,false,Sally's 401k,100000.0,Sally,33,true,VCIT,USC
+false,false,Sally's 401k,100000.0,Sally,33,true,AGG,USC
+false,false,Sally's 401k,100000.0,Sally,33,true,AGG,USC
+false,false,Sally's 401k,100000.0,Sally,33,true,BOND,USC
+false,false,Sally's 401k,100000.0,Sally,33,true,BOND,USC
+true,true,Joe's IRA,100000.0,Joe,50,true,AAPL,true,15
+true,true,Joe's IRA,100000.0,Joe,50,true,TSLA,true,15
+true,true,Joe's IRA,100000.0,Joe,50,true,KO,true,15
+true,true,Joe's IRA,100000.0,Joe,50,true,KO,true,15
+true,false,Joe's 401k,100000.0,Joe,50,true,MSFT,true,USC
+true,false,Joe's 401k,100000.0,Joe,50,true,TSLA,true,USC
+true,false,Joe's 401k,100000.0,Joe,50,true,TSLA,true,USC

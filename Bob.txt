@@ -1,0 +1,14 @@
+******************************
+Bob tax form 2022
+******************************
+
+Bob'sIRA:
+	Cash : 100000.0
+	MSFT : 1
+	JPM : 2
+	MRNA : 2
+
+
+Net Worth: 100909.97
+Tax Date: 0.35
+OWED TAXES ARE: 35318.49

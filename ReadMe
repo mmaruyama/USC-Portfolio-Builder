@@ -1,0 +1,78 @@
+4/12:
+I think I want to challenge myself and try to make a web scraper where I will take stock information from yahoo finance and use that information 
+to create stocks and bonds from tickers to create stocks and bonds objects. This means that I am going effectively creating a brokerage firm that has clients
+that will clients. Each client has various portfolios and within each portfolio they will have the chosen stocks. 
+
+I kinda expect the web scraping portion of the code to be the most difficult part. I've only worked with the beautifulsoup library in python so
+I will be using some information that i find online to help me. But for the most part, I envision the various 
+hierarchies to be securities which will have child classes of stocks and bonds. An abstract portfolio class which will have
+child classes of 401ks and IRA classes (partially because i don't want the user to be able to create a generic portfolio class). And finally
+I'll just have some various classes that will in essence house or have a has-a relationship being the clients and brokeragefirm itself
+
+
+
+4/13:
+I have started designing the UML for this project already and it's more complicated than i thought. I am adding a updateable interface to all my securities along
+with my portfolio which can basically be called whenever the portfolio or security is called to get the most recent price
+of stocks and bonds. I also found a really cool youtube tutorial that uses this java.net library and URLConnection method to in a sense grab some meta
+data of the webpage (It's not html, css, or JSON so i'm not exactly sure what data of the page I'm grabbing but i got it working). But i got the
+webreader to primitively work by grabbing basic info like price and PE of stocks if the ticker exists. I added a very simple try catch statement for invalid
+ticker errors but I have a feeling i'm going to need a lot more encompassing error catching in the future
+
+https://www.youtube.com/watch?v=UVqjMbYlCFs
+https://mobilemonitoringsolutions.com/8-most-popular-java-web-crawling-scraping-libraries/
+
+
+4/14:
+I made huge progress on the project. I created all my security classes and its child classes along with the portfolio classes. I also added my handy
+ITPHelper and filereader for the future. I have tenatively established a connection for creating stocks using the web reader but am still having some problems 
+with inconsisitcies. For example, I try to add a TSLA stock to a portfolio (where there is a map of <security,int> where the int is how many stocks there are in the portfolio.
+however, its treating all the stocks differently every time i run it. For example, one time it will perfectly add the two tsla stocks togeher, but anaother it will
+treat the tsla stocks as two different stocks (even though my equals method for securities is that only the ticker needs to match), so I'm very confused.
+I think i'm goign to need to change the map element from the security as the key to the string of the ticker as the key.
+
+4/17:
+After making that change, my program works so much smoother now. I also added some internal error checking in the web reader that now makes sure the number
+returned is either the real double or -9999.0 which i'll change later to be NA. I also finished making all my necesssary classes with the big one
+being my brokerage firm, which will in essence house all my actions. This should be fairly straighforward. The only problems I found were that
+my program is incredibly slow loading in (because i have to parse through that web doc information) so it takes about 2 minutes to load. Not sure how to 
+solve that problem yet, but slowly making all the methods for brokerage firm
+
+4/20:
+I have completed all but two methods or actiosn the brokerage firm is capaable of, but am very satisifed with the state i'm at now. I start by prepopulating
+my brokerage firm with 2 clients read in from a file and then add a third manually within the code (to show dual capabilities). I also have some pretty long
+boolean decision trees when it comes to adding various stocks and whatnot. I think the coolest part about this is that I have a list of stocks that people
+can add if they need help knowing tickers, basically based on what stocks are currently in people's portfolios, but i also can add stocks that aren't 
+in these lists, showing how cool the web scraper is. So instead of having to manually code in all different possibilites of the thousnds of stocks out there,
+I can immediately add "GOOG" for instance (which isn't on the lsit) and the web reader will make a new legit stock with real time inforamtion without 
+any issues and now add it to the list so everyone can use it moving forward. 
+
+4/21:
+I ran into a weird error today. Everything was working fine previously to this, until I tried running it again and got met with the following error
+java.io.IOException: Server returned HTTP response code: 503 for URL: https://finance.yahoo.com/quote/JPM
+
+I was later able to fix it by looking up on the internet that type of error. I was trying to call too many connections at once to the server so it was blocking
+me! I wil have to remember that for later (also the stie could have been under maintenace
+
+https://stackoverflow.com/questions/30492370/server-returned-http-response-code-503-for-url#:~:text=HTTP%20503%20means%20Requested%20Service%20is%20Unavailable.&text=If%20you%20are%20accessing%20a,to%20find%20out%20the%20problem.
+
+So something to keep an eye on. But only have my final method to write!
+
+4/22:
+Finished all the methods! So in essence I am done with my first draft of my final project! I expect people to give me feedback and add more methdos when
+possible but I could turn it in now as is and feel content. The only issue is the shaky server connection at times! I still get random errors
+about server connection when I mainly iniatilze data (and not sure exactly why) but will talk to professor about it and potential ways
+to fix it!
+
+4/26:
+Implemented the changes from the professor (ie creating a save functionality where I write out all the changes to the data and will read in that same data). Will think about adding the other
+changes and methods offered in my discussion too (just because it requires a lot more work)
+
+4/27:
+Added another method regarding tracking major market indices which required me to add a different indexReader class which is very similar to that of the webReader.
+The reason I needed to separate these was because they required different processes to add the correct URL and look for different things.
+Also a note on the webreaders in general, I needed to construct a separate URLConnection for all methods I am going to grab (and not just one for each stock)
+because the webscraper will return a single item at a time and if I called it again, it would still input the same reader
+
+4/28:
+After looking through my program, I realized I didn't comment my program as well as I should have so I spent the night adding comments on how my program works 
